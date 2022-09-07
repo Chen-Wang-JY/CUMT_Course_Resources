@@ -1,0 +1,81 @@
+DATA SEGMENT
+TABLE_1 DB  77H,  7BH,  7DH,   7EH, 0B7H, 0BBH, 0BDH, 0BEH
+        DB 0D7H, 0DBH, 0DDH,  0DEH, 0E7H, 0EBH, 0EDH, 0EEH
+
+TABLE_2 DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H
+        DB 7FH,6FH,77H,7CH,39H,5EH,79H,71H
+
+;DATA ENDS
+
+CODE SEGMENT
+    ASSUME CS:CODE, DS:DATA
+START:
+    MOV AX,DATA
+    MOV DS, AX
+    MOV DX, 283H
+    MOV AL, 10000010B
+    OUT DX, AL
+    MOV DX, 280H
+    MOV AL, 00H
+    OUT DX, AL
+    
+    MOV DX, 281H
+WAIT_OPEN:
+    IN AL, DX
+    AND AL,0FH
+    CMP AL, 0FH
+    JNE WAIT_OPEN
+
+WAIT_PRES:
+    IN  AL, DX
+    AND AL, 0FH
+    CMP AL, 0FH
+    JE WAIT_PRES    ;没有键按下
+    MOV CX, 16EAH
+    DELAY: LOOP DELAY
+    
+    IN AL, DX
+    AND AL, 0FH
+    CMP AL, 0FH
+    JE WAIT_PRES
+    
+    ;真的有键按下去了
+    MOV AL, 11111110B
+    MOV CL, AL  ;暂存
+NEXT_ROW:
+    MOV DX, 280H
+    OUT DX, AL
+    MOV DX, 281H
+    IN  AL, DX
+    AND AL, 0FH
+    CMP AL, 0FH
+    JNE ENCODE
+    ROL CL, 01
+    MOV AL, CL  ;恢复
+    JMP NEXT_ROW
+
+ENCODE:
+    MOV BX, 000FH
+    IN AL, DX
+    NEXT_TRY:
+        CMP AL, TABLE_1[BX]
+        JE DONE
+        DEC BX
+        JNS NEXT_TRY
+        MOV AH, 01
+        JMP EXIT
+DONE:
+    MOV DX, 282H
+    MOV AL, TABLE_2[BX]
+    OUT DX, AL
+    MOV BX, 500H
+    DELAY1:
+        MOV CX, 65535
+        DELAY2: LOOP DELAY2
+        DEC BX
+        JNZ DELAY1
+    JMP START
+EXIT:
+    HLT
+CODE ENDS
+END START

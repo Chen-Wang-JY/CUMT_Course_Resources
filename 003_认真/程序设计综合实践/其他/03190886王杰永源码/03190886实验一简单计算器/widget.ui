@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>482</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>482</width>
+    <height>520</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>482</width>
+    <height>520</height>
+   </size>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>180</y>
+     <width>464</width>
+     <height>330</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="3" column="2">
+     <widget class="QPushButton" name="Button_5">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="Button_8">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="QPushButton" name="Button_add">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="5">
+     <widget class="QPushButton" name="Button_clear">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>C</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="Button_7">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>7</string>
+      </property>
+      <property name="autoRepeat">
+       <bool>false</bool>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="5">
+     <widget class="QPushButton" name="Button_back">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>←</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="Button_9">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>9</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="Button_4">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="5">
+     <widget class="QPushButton" name="Button_divide">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>÷</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="Button_6">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPushButton" name="Button_2">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="Button_1">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QPushButton" name="Button_point">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4" rowspan="2">
+     <widget class="QPushButton" name="Button_equal">
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>130</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>=</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1" colspan="2">
+     <widget class="QPushButton" name="Button_0">
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="5">
+     <widget class="QPushButton" name="Button_multiply">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>×</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="Button_3">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(180, 180, 180);</string>
+      </property>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <widget class="QPushButton" name="Button_mod">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>Mod</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="Button_PI">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>Π</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="Button_e">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>e</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QPushButton" name="Button_subtract">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="Button_left">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>(</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QPushButton" name="Button_right">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="Button_genhao">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>√</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="Button_tan">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>tan</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="Button_cos">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>cos</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="Button_sin">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>sin</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QPushButton" name="Button_log">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    padding: 6px;
+background-color: rgb(135, 135, 135);</string>
+      </property>
+      <property name="text">
+       <string>ln</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="Button_history">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>5</y>
+     <width>49</width>
+     <height>49</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color:  rgb(80, 80,80);
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Screen">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>93</y>
+     <width>441</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lucida Fax</family>
+     <pointsize>16</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    padding: 6px;
+background-color: rgb(150, 150, 150);</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>61</y>
+     <width>441</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> border-style: outset;
+	border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    padding: 6px;
+background-color: rgb(150, 150, 150);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

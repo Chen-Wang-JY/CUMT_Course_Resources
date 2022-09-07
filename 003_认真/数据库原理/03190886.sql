@@ -1,0 +1,127 @@
+#1
+select 姓名,课程名,成绩
+from 学习 as CS,学生 as S,课程 as C
+where CS.学号=S.学号
+	and CS.课程号=C.课程号
+	and 成绩>90
+    and 教师号 in ( select 教师号 from 教师
+					where 教师名='王刚');
+
+#2
+select 姓名,学院名称
+from 学生,学院
+where 学生.学院代码=学院.学院代码 and not exists
+	(select *
+	from 授课,教师
+	where 授课.教师号=教师.教师号 and 教师名='王刚' and not exists
+		(select *
+        from 学习
+        where 学生.学号=学习.学号 and 学习.课程号=授课.课程号)
+	);
+
+#3 
+select 学号,姓名
+from 学生
+where not exists
+	(select *
+    from 课程,学习
+    where 课程.课程号=学习.课程号 and 学生.学号=学习.学号 and 课程名='软件工程');
+
+
+#4
+select 学生.学号
+from 学生,学习
+where 学生.学号=学习.学号
+group by 学号
+having count(课程号)>=2;
+
+#5
+select 姓名,成绩
+from 学习,学生,课程
+where 学习.学号=学生.学号 and 学习.课程号=课程.课程号
+	and 课程名='经济学' and 成绩<60;
+
+#6 
+select 学号
+from 学生
+where not exists
+	(select * from 学习 as B
+    where 学号='T06' and not exists
+		(select * from 学习 as A
+        where 学生.学号=A.学号 and A.课程号=B.课程号)
+	);
+
+#7 
+select 姓名,学院名称
+from 学生,学习,学院
+where 学生.学号=学习.学号 and 学生.学院代码=学院.学院代码
+	and 课程号='C3'
+    and 学生.学号 in
+		(select 学号
+		from 学习
+		where 课程号='C4');
+
+#8 
+select 课程号,课程名
+from 课程
+where 课程号 not in
+	(select 课程号
+    from 学习,学生
+    where 学生.学号=学习.学号 and 姓名='王石');
+    
+#9 
+select 课程号
+from 课程
+where 课程号 not in 
+	(select 课程号
+    from 学习);
+
+
+    
+#10
+select 姓名
+from 学生
+where not exists
+	(select * from 课程
+    where not exists
+		(select * from 学习
+        where 学生.学号=学习.学号 and 课程.课程号=学习.课程号)
+	);
+    
+#11
+select 学院名称,avg(成绩) as “经济学”的平均分
+from 学院,学习,学生,课程
+where 学生.学号=学习.学号 and 学生.学院代码=学院.学院代码
+	and 课程.课程号=学习.课程号 and 课程名='经济学'
+group by 学院.学院代码
+order by “经济学”的平均分 desc;
+
+#12
+select 姓名,学院名称,成绩
+from 学生,学院,学习,课程
+where 学生.学号=学习.学号 and 学院.学院代码=学生.学院代码 and 课程.课程号=学习.课程号
+	and 课程名='经济学'
+order by 学院名称,成绩 desc;
+
+#13
+select 课程.课程号,课程名,教师名
+from 课程,授课,教师
+where 课程.课程号=授课.课程号 and 授课.教师号=教师.教师号
+	and 学时 between 30 and 45;
+    
+#14
+select 姓名 
+from 学生,学习,课程
+where 学生.学号=学习.学号 and 学习.课程号=课程.课程号
+	and 课程名='经济学'
+	and 成绩>=ALL(select 成绩 from 学习,课程
+				where 学习.课程号=课程.课程号
+					and 课程名='经济学');
+				
+
+#15
+select 课程.课程号,课程名
+from 课程,学习
+where 课程.课程号=学习.课程号
+group by 课程号
+having count(学号)>5;

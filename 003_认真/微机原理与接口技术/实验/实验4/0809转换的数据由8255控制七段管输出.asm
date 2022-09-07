@@ -1,0 +1,45 @@
+PORTA EQU 290H
+PORTB EQU 291H
+PORTC EQU 292H
+PORTR EQU 293H
+
+DATA SEGMENT
+TABLE DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H
+      DB 7FH,6FH,77H,7CH,39H,5EH,79H,71H
+DATA END
+
+CODE SEGMENT
+	ASSUME CS:CODE, DS:DATA
+START:
+	;初始化DS寄存器
+	MOV AX, DATA
+	MOV DS, AX
+	;8255控制字
+	MOV DX,293H; 8255初始化，I/O译码选择Y2
+	MOV AL, 10010000B; A口输入，BC输出
+	OUT DX,AL
+X1: MOV DX,284H; ADC0809 I/O译码选择Y0,启动转换，INT4(地址284H)可作为可变电压的输入端口
+	OUT DX,AL
+NO:MOV DX,290H;读8255A口状态，ADC0809将EOC中的脉冲给到8255A口
+	IN AL,DX
+	TEST AL,80H;检测8255的PA7是否为高电平
+	JZ NO；测试PA7是否为高电平，若是则循环等待
+	MOV DX,284H;否，PA7处于低电平状态时，读入数据
+	IN AL,DX
+	; AL中是8位二进制模拟量，四位一组
+	MOV AH, AL
+	AND AL, 0FH     ;AL中是低四位，可以对应一个十六进制数
+	AND AH, 0F0H    ;AH中是高四位，可以对应一个十六进制数
+	MOV BX, OFFSET TABLE   ;TABLE是数据段中定义的七段管的编码表
+	XLAT        ;查表，得到七段管编码
+	MOV DX, PORTB
+	OUT DX, AL  ;将数字量低四位的七段管编码输出到七段管显示
+	ROR AH, 4
+	MOV AL, AH  ;AL中存放数字量的高四位
+	XLAT ;查表
+	MOV DX, PORTC
+	OUT DX, AL  ;将数字量高四位的七段管编码输出到七段管显示
+
+	JMP X1
+CODE ENDS
+    END START

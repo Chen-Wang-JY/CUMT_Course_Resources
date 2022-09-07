@@ -1,0 +1,1 @@
+gcc cgrammar-new.tab.c lex.yy.c parser.c tac.c optimizetac.c asm.c main.c -o task.exe

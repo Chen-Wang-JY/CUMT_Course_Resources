@@ -1,0 +1,112 @@
+;8255端口地址
+PORT_A EQU 280H
+PORT_B EQU 281H
+PORT_C EQU 282H
+PORT_CTL5 EQU 283H
+;8253端口地址
+PORT_IN0 EQU 2A0H
+PORT_CTL3 EQU 2A3H
+;DAC0832端口地址
+PORT_DA EQU 2A8H
+
+DATA SEGMENT
+KEYBOARD DB  77H,  7BH,  7DH,   7EH, 0B7H, 0BBH, 0BDH, 0BEH
+         DB 0D7H, 0DBH, 0DDH,  0DEH, 0E7H, 0EBH, 0EDH, 0EEH
+DATA ENDS
+
+CODE SEGMENT
+	ASSUME CS:CODE, DS:DATA
+START:
+;数据段寄存器
+	MOV AX, DATA
+	MOV DS, AX
+;8255控制字
+	MOV DX, PORT_CTL5
+	MOV AL, 10000010    ;AC输出，B输入
+	MOV DX, AL
+
+;判断是否所有的键都松开
+	MOV DX, PORT_A
+	MOV AL, 00H
+	OUT DX, AL
+WAIT_OPEN:
+	MOV DX, PORT_B
+	IN  AL, DX
+	AND AL, 0FH    ;取列线状态
+	CMP AL, 0FH
+	JNZ WAIT_OPEN
+
+;此时按键已经全部松开
+;再去循环检测是否有键按下
+WAIT_PRESS:
+	IN  AL, DX     ;读取键盘状态
+	AND AL, 0FH
+	CMP AL, 0FH
+	JZ WAIT_PRESS
+	;有键按下，等待20ms，消除抖动
+	MOV CX, 16EAH
+	DELAY20: LOOP DELAY20
+	IN  AL, DX
+	AND AL, 0FH
+	CMP AL, 0FH
+	JZ WAIT_PRESS
+
+;确实有键按下，逐行检查，是哪一列被按下
+	MOV AL, 11111110    ;让第一行行线低电平，检查第一行的各列
+	MOV CL, AL    ;暂存当前检查到第几行的状态寄存器	
+NEXT_ROW:
+	MOV DX, PORT_A
+	OUT DX, AL
+	MOV DX, PORT_B
+	IN  AL, DX
+	AND AL, 0FH
+	CMP AL, 0FH
+	JNZ ENCODE      ;是该行被按下，跳转至编码程序
+	;不是该行被按下，则状态左移
+	ROL CL, 1
+	MOV AL, CL    ;恢复当前检查到第几行的状态寄存器
+	JMP NEXT_ROW
+
+;找到了某一列某一列的位置，开始编码
+ENCODE:
+	MOV BX, 000FH ;从编码表的最后开始查
+	MOV DX, PORT_B
+	IN  AL, DX    ;AL中存储了行列号，去查编码表
+NEXT_TRY:
+	CMP AL, KEYBOARD[BX]
+	JZ  MAIN      ;相等，查到，则跳转主程序
+	DEC BX
+	JNS NEXT_TRY  ;不是负值，则继续查表
+	;BX地址减为负值，则停机报错
+	MOV AH, 01
+	JMP EXIT
+
+;主程序
+MAIN:
+	;1.键值由8255输出至LED显示
+	MOV DX, PORT_C
+	OUT DX, AL
+	;2.由0832产生锯齿波
+	MOV DX, PORT_DA
+	MOV AL, 00H
+CREATE_WAVE:
+	OUT DX, AL
+	INC AL
+	CMP AL, 0FFH    ;数字量是否到最大值
+	JNZ CREATE_WAVE ;没有到最大值，则继续自增1
+	;到最大值之后，利用8253产生0.1s延迟
+	MOV DX, PORT_CLT3
+	MOV AL, 00110111;通道0，方式3，高低字节，BCD码
+	OUT DX, AL
+	;送入初值0000H
+	MOV DX, PORT_IN0
+	MOV AL, 00H
+	OUT DX, AL
+	OUT DX, AL
+	;产生延迟？
+
+
+EXIT:
+	HLT    ;停机指令，P113页
+CODE ENDS
+	 END START

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_Search</class>
+ <widget class="QWidget" name="Form_Search">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1051</width>
+    <height>553</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>查找</string>
+  </property>
+  <widget class="QTableWidget" name="Table_Search">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>1041</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">selection-background-color: rgb(255, 196, 190);
+selection-color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <property name="rowCount">
+    <number>1</number>
+   </property>
+   <row/>
+   <column>
+    <property name="text">
+     <string>学号</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>姓名</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>性别</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>年龄</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>手机号码</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>家庭地址</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>QQ号码</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>专业</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>30</y>
+     <width>351</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>查找项目：</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="Combobox_Search">
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>学号</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>姓名</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>性别</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>年龄</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>手机号码</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>家庭地址</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>QQ号码</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>专业</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="Edit_Search"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>30</y>
+     <width>241</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QPushButton" name="Button_Search">
+      <property name="text">
+       <string>查询</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="Button_Close">
+      <property name="text">
+       <string>关闭</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

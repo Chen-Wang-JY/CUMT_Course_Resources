@@ -1,0 +1,11 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{	
+	//这里是注释
+	float a = 1.233.5;
+	string str = "Hello World;
+	cout << "hello world" << endl;
+	return 0;
+}

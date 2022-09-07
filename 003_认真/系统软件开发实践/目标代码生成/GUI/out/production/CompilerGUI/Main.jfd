@@ -1,0 +1,84 @@
+JFDML JFormDesigner: "7.0.5.1.409" Java: "11.0.12" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+					"$layoutConstraints": "insets dialog,hidemode 3"
+					"$columnConstraints": "[200,fill][200,fill][200,fill][200,fill]"
+					"$rowConstraints": "[60][30][30][30][510][]"
+				} ) {
+					name: "contentPanel"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labelFilePath"
+						"border": new javax.swing.border.MatteBorder( 1, 1, 1, 1, sfield java.awt.Color black )
+						"text": " "
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 3, 7, false )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 0 2 1,wmin 200,hmin 40"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonSelectFile"
+						"text": "选择文件"
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 2 0,wmin 40"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonFileClear"
+						"text": "清空区域"
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 3 0,wmin 40"
+					} )
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textCodeArea"
+						"font": new java.awt.Font( "Monospac821 BT", 0, 16 )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 1 2 4,wmin 200,hmin 580"
+					} )
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textAnsArea"
+						"font": new java.awt.Font( "宋体", 0, 14 )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 2 1 2 4,hmin 580"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonLexicalAnalysis"
+						"text": "词法分析"
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 0 5"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonGrammaticalAnalysis"
+						"text": "语法分析"
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 1 5"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonTacGenerate"
+						"text": "中间代码"
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 2 5"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "buttonFinalCodeGenerate"
+						"text": "目标代码"
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 3 5"
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 10, 15 )
+			"size": new java.awt.Dimension( 730, 630 )
+		} )
+	}
+}

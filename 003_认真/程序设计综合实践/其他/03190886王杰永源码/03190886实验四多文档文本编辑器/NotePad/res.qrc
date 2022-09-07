@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon/加粗.png</file>
+        <file>icon/居中.png</file>
+        <file>icon/倾斜.png</file>
+        <file>icon/下划线.png</file>
+        <file>icon/右对齐.png</file>
+        <file>icon/左对齐.png</file>
+        <file>icon/保存.png</file>
+        <file>icon/查找.png</file>
+        <file>icon/撤回.png</file>
+        <file>icon/打开.png</file>
+        <file>icon/复制.png</file>
+        <file>icon/剪贴.png</file>
+        <file>icon/另存为.png</file>
+        <file>icon/新建.png</file>
+        <file>icon/粘贴.png</file>
+        <file>icon/重做.png</file>
+        <file>icon/关闭.png</file>
+        <file>icon/关闭全部.png</file>
+        <file>icon/字体.png</file>
+        <file>icon/窗口层叠.png</file>
+        <file>icon/打印.png</file>
+        <file>icon/打印预览.png</file>
+        <file>icon/水平平铺 .png</file>
+        <file>icon/颜色.png</file>
+        <file>icon/关于.png</file>
+        <file>icon/Begin.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,61 @@
+DATA SEGMENT
+
+DATA ENDS
+
+CODE SEGMENT
+	ASSUME CS: CODE, DS: DATA
+
+START:
+	MOV AX, DATA
+	MOV DS, AX
+
+ALLOC:
+	MOV AL, 0
+	MOV [1], AL
+	MOV AL, 0
+	MOV [2], AL
+	MOV AL, 0
+	MOV [3], AL
+
+MAIN:
+	MOV AL, 1
+	MOV [2], AL
+label1:
+	MOV AL, [2]
+	MOV AH, AL
+	MOV AL, 10
+	SUB AL, AH
+	MOV BL, AL
+	INC BL
+	CMP BL, 0
+	JNG label2
+	MOV AL, [2]
+	MOV AH, AL
+	MOV AL, 5
+	SUB AH, AL
+	MOV [3], AH
+	MOV AL, [3]
+	MOV AH, AL
+	MOV AL, 0
+	SUB AL, AH
+	MOV BL, AL
+	INC BL
+	CMP BL, 0
+	JNG label3
+	MOV AL, [1]
+	MOV AH, AL
+	MOV AL, [2]
+	MOV BL, AL
+	ADD AH, BL
+	MOV [1], AH
+label3:
+	MOV AL, [2]
+	MOV AH, AL
+	MOV AL, 1
+	ADD AH, AL
+	MOV [2], AH
+	JMP label1
+label2:
+
+CODE ENDS
+END START
